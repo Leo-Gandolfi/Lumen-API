@@ -1,0 +1,382 @@
+[2023-09-15 12:32:04] local.ERROR: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: "title" (SQL: select * from "posts" where "posts"."id" = title limit 1) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 22P02): SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \"title\" (SQL: select * from \"posts\" where \"posts\".\"id\" = title limit 1) at /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php:712)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(376): Illuminate\\Database\\Connection->run()
+#2 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\\Database\\Connection->select()
+#3 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2402): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2936): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2403): Illuminate\\Database\\Query\\Builder->onceWithColumns()
+#6 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(625): Illuminate\\Database\\Query\\Builder->get()
+#7 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(609): Illuminate\\Database\\Eloquent\\Builder->getModels()
+#8 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Concerns/BuildsQueries.php(294): Illuminate\\Database\\Eloquent\\Builder->get()
+#9 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(400): Illuminate\\Database\\Eloquent\\Builder->first()
+#10 /home/leonardo/projeto/api-lumen/vendor/illuminate/support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->find()
+#11 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2132): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#12 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2144): Illuminate\\Database\\Eloquent\\Model->__call()
+#13 /home/leonardo/projeto/api-lumen/app/Http/Controllers/PostController.php(17): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#14 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(36): App\\Http\\Controllers\\PostController->searchPost()
+#15 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#17 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#18 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#19 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Illuminate\\Container\\Container->call()
+#20 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(332): Laravel\\Lumen\\Application->callControllerCallable()
+#21 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(282): Laravel\\Lumen\\Application->callControllerAction()
+#22 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(267): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute()
+#23 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(237): Laravel\\Lumen\\Application->handleFoundRoute()
+#24 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\\Lumen\\Application->handleDispatcherResponse()
+#25 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}()
+#26 /home/leonardo/projeto/api-lumen/app/Http/Middleware/CorsMiddleware.php(34): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#27 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(167): App\\Http\\Middleware\\CorsMiddleware->handle()
+#28 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#30 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(426): Illuminate\\Pipeline\\Pipeline->then()
+#31 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(175): Laravel\\Lumen\\Application->sendThroughPipeline()
+#32 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch()
+#33 /home/leonardo/projeto/api-lumen/public/index.php(28): Laravel\\Lumen\\Application->run()
+#34 {main}
+
+[previous exception] [object] (PDOException(code: 22P02): SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \"title\" at /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php:373)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(373): PDOStatement->execute()
+#1 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(376): Illuminate\\Database\\Connection->run()
+#4 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\\Database\\Connection->select()
+#5 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2402): Illuminate\\Database\\Query\\Builder->runSelect()
+#6 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2936): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#7 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2403): Illuminate\\Database\\Query\\Builder->onceWithColumns()
+#8 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(625): Illuminate\\Database\\Query\\Builder->get()
+#9 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(609): Illuminate\\Database\\Eloquent\\Builder->getModels()
+#10 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Concerns/BuildsQueries.php(294): Illuminate\\Database\\Eloquent\\Builder->get()
+#11 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(400): Illuminate\\Database\\Eloquent\\Builder->first()
+#12 /home/leonardo/projeto/api-lumen/vendor/illuminate/support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->find()
+#13 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2132): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#14 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2144): Illuminate\\Database\\Eloquent\\Model->__call()
+#15 /home/leonardo/projeto/api-lumen/app/Http/Controllers/PostController.php(17): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#16 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(36): App\\Http\\Controllers\\PostController->searchPost()
+#17 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#19 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#20 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#21 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Illuminate\\Container\\Container->call()
+#22 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(332): Laravel\\Lumen\\Application->callControllerCallable()
+#23 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(282): Laravel\\Lumen\\Application->callControllerAction()
+#24 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(267): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute()
+#25 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(237): Laravel\\Lumen\\Application->handleFoundRoute()
+#26 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\\Lumen\\Application->handleDispatcherResponse()
+#27 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}()
+#28 /home/leonardo/projeto/api-lumen/app/Http/Middleware/CorsMiddleware.php(34): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#29 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(167): App\\Http\\Middleware\\CorsMiddleware->handle()
+#30 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#32 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(426): Illuminate\\Pipeline\\Pipeline->then()
+#33 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(175): Laravel\\Lumen\\Application->sendThroughPipeline()
+#34 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch()
+#35 /home/leonardo/projeto/api-lumen/public/index.php(28): Laravel\\Lumen\\Application->run()
+#36 {main}
+"} 
+[2023-09-15 12:32:34] local.ERROR: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: "title" (SQL: select * from "posts" where "posts"."id" = title limit 1) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 22P02): SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \"title\" (SQL: select * from \"posts\" where \"posts\".\"id\" = title limit 1) at /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php:712)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(376): Illuminate\\Database\\Connection->run()
+#2 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\\Database\\Connection->select()
+#3 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2402): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2936): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2403): Illuminate\\Database\\Query\\Builder->onceWithColumns()
+#6 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(625): Illuminate\\Database\\Query\\Builder->get()
+#7 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(609): Illuminate\\Database\\Eloquent\\Builder->getModels()
+#8 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Concerns/BuildsQueries.php(294): Illuminate\\Database\\Eloquent\\Builder->get()
+#9 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(400): Illuminate\\Database\\Eloquent\\Builder->first()
+#10 /home/leonardo/projeto/api-lumen/vendor/illuminate/support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->find()
+#11 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2132): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#12 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2144): Illuminate\\Database\\Eloquent\\Model->__call()
+#13 /home/leonardo/projeto/api-lumen/app/Http/Controllers/PostController.php(17): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#14 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(36): App\\Http\\Controllers\\PostController->searchPost()
+#15 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#17 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#18 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#19 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Illuminate\\Container\\Container->call()
+#20 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(332): Laravel\\Lumen\\Application->callControllerCallable()
+#21 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(282): Laravel\\Lumen\\Application->callControllerAction()
+#22 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(267): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute()
+#23 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(237): Laravel\\Lumen\\Application->handleFoundRoute()
+#24 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\\Lumen\\Application->handleDispatcherResponse()
+#25 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}()
+#26 /home/leonardo/projeto/api-lumen/app/Http/Middleware/CorsMiddleware.php(34): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#27 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(167): App\\Http\\Middleware\\CorsMiddleware->handle()
+#28 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#30 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(426): Illuminate\\Pipeline\\Pipeline->then()
+#31 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(175): Laravel\\Lumen\\Application->sendThroughPipeline()
+#32 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch()
+#33 /home/leonardo/projeto/api-lumen/public/index.php(28): Laravel\\Lumen\\Application->run()
+#34 {main}
+
+[previous exception] [object] (PDOException(code: 22P02): SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \"title\" at /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php:373)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(373): PDOStatement->execute()
+#1 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(376): Illuminate\\Database\\Connection->run()
+#4 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\\Database\\Connection->select()
+#5 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2402): Illuminate\\Database\\Query\\Builder->runSelect()
+#6 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2936): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#7 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2403): Illuminate\\Database\\Query\\Builder->onceWithColumns()
+#8 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(625): Illuminate\\Database\\Query\\Builder->get()
+#9 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(609): Illuminate\\Database\\Eloquent\\Builder->getModels()
+#10 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Concerns/BuildsQueries.php(294): Illuminate\\Database\\Eloquent\\Builder->get()
+#11 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(400): Illuminate\\Database\\Eloquent\\Builder->first()
+#12 /home/leonardo/projeto/api-lumen/vendor/illuminate/support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->find()
+#13 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2132): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#14 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2144): Illuminate\\Database\\Eloquent\\Model->__call()
+#15 /home/leonardo/projeto/api-lumen/app/Http/Controllers/PostController.php(17): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#16 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(36): App\\Http\\Controllers\\PostController->searchPost()
+#17 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#19 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#20 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#21 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Illuminate\\Container\\Container->call()
+#22 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(332): Laravel\\Lumen\\Application->callControllerCallable()
+#23 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(282): Laravel\\Lumen\\Application->callControllerAction()
+#24 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(267): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute()
+#25 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(237): Laravel\\Lumen\\Application->handleFoundRoute()
+#26 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\\Lumen\\Application->handleDispatcherResponse()
+#27 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}()
+#28 /home/leonardo/projeto/api-lumen/app/Http/Middleware/CorsMiddleware.php(34): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#29 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(167): App\\Http\\Middleware\\CorsMiddleware->handle()
+#30 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#32 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(426): Illuminate\\Pipeline\\Pipeline->then()
+#33 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(175): Laravel\\Lumen\\Application->sendThroughPipeline()
+#34 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch()
+#35 /home/leonardo/projeto/api-lumen/public/index.php(28): Laravel\\Lumen\\Application->run()
+#36 {main}
+"} 
+[2023-09-15 12:32:39] local.ERROR: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: "title" (SQL: select * from "posts" where "posts"."id" = title limit 1) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 22P02): SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \"title\" (SQL: select * from \"posts\" where \"posts\".\"id\" = title limit 1) at /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php:712)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(376): Illuminate\\Database\\Connection->run()
+#2 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\\Database\\Connection->select()
+#3 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2402): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2936): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2403): Illuminate\\Database\\Query\\Builder->onceWithColumns()
+#6 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(625): Illuminate\\Database\\Query\\Builder->get()
+#7 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(609): Illuminate\\Database\\Eloquent\\Builder->getModels()
+#8 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Concerns/BuildsQueries.php(294): Illuminate\\Database\\Eloquent\\Builder->get()
+#9 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(400): Illuminate\\Database\\Eloquent\\Builder->first()
+#10 /home/leonardo/projeto/api-lumen/vendor/illuminate/support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->find()
+#11 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2132): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#12 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2144): Illuminate\\Database\\Eloquent\\Model->__call()
+#13 /home/leonardo/projeto/api-lumen/app/Http/Controllers/PostController.php(17): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#14 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(36): App\\Http\\Controllers\\PostController->searchPost()
+#15 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#17 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#18 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#19 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Illuminate\\Container\\Container->call()
+#20 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(332): Laravel\\Lumen\\Application->callControllerCallable()
+#21 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(282): Laravel\\Lumen\\Application->callControllerAction()
+#22 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(267): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute()
+#23 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(237): Laravel\\Lumen\\Application->handleFoundRoute()
+#24 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\\Lumen\\Application->handleDispatcherResponse()
+#25 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}()
+#26 /home/leonardo/projeto/api-lumen/app/Http/Middleware/CorsMiddleware.php(34): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#27 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(167): App\\Http\\Middleware\\CorsMiddleware->handle()
+#28 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#30 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(426): Illuminate\\Pipeline\\Pipeline->then()
+#31 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(175): Laravel\\Lumen\\Application->sendThroughPipeline()
+#32 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch()
+#33 /home/leonardo/projeto/api-lumen/public/index.php(28): Laravel\\Lumen\\Application->run()
+#34 {main}
+
+[previous exception] [object] (PDOException(code: 22P02): SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \"title\" at /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php:373)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(373): PDOStatement->execute()
+#1 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(376): Illuminate\\Database\\Connection->run()
+#4 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\\Database\\Connection->select()
+#5 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2402): Illuminate\\Database\\Query\\Builder->runSelect()
+#6 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2936): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#7 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2403): Illuminate\\Database\\Query\\Builder->onceWithColumns()
+#8 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(625): Illuminate\\Database\\Query\\Builder->get()
+#9 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(609): Illuminate\\Database\\Eloquent\\Builder->getModels()
+#10 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Concerns/BuildsQueries.php(294): Illuminate\\Database\\Eloquent\\Builder->get()
+#11 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(400): Illuminate\\Database\\Eloquent\\Builder->first()
+#12 /home/leonardo/projeto/api-lumen/vendor/illuminate/support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->find()
+#13 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2132): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#14 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2144): Illuminate\\Database\\Eloquent\\Model->__call()
+#15 /home/leonardo/projeto/api-lumen/app/Http/Controllers/PostController.php(17): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#16 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(36): App\\Http\\Controllers\\PostController->searchPost()
+#17 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#19 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#20 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#21 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Illuminate\\Container\\Container->call()
+#22 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(332): Laravel\\Lumen\\Application->callControllerCallable()
+#23 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(282): Laravel\\Lumen\\Application->callControllerAction()
+#24 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(267): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute()
+#25 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(237): Laravel\\Lumen\\Application->handleFoundRoute()
+#26 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\\Lumen\\Application->handleDispatcherResponse()
+#27 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}()
+#28 /home/leonardo/projeto/api-lumen/app/Http/Middleware/CorsMiddleware.php(34): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#29 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(167): App\\Http\\Middleware\\CorsMiddleware->handle()
+#30 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#32 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(426): Illuminate\\Pipeline\\Pipeline->then()
+#33 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(175): Laravel\\Lumen\\Application->sendThroughPipeline()
+#34 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch()
+#35 /home/leonardo/projeto/api-lumen/public/index.php(28): Laravel\\Lumen\\Application->run()
+#36 {main}
+"} 
+[2023-09-15 17:03:02] local.ERROR: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: "Amanda" (SQL: select * from "posts" where "posts"."id" = Amanda limit 1) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 22P02): SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \"Amanda\" (SQL: select * from \"posts\" where \"posts\".\"id\" = Amanda limit 1) at /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php:712)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(376): Illuminate\\Database\\Connection->run()
+#2 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\\Database\\Connection->select()
+#3 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2402): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2936): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2403): Illuminate\\Database\\Query\\Builder->onceWithColumns()
+#6 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(625): Illuminate\\Database\\Query\\Builder->get()
+#7 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(609): Illuminate\\Database\\Eloquent\\Builder->getModels()
+#8 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Concerns/BuildsQueries.php(294): Illuminate\\Database\\Eloquent\\Builder->get()
+#9 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(400): Illuminate\\Database\\Eloquent\\Builder->first()
+#10 /home/leonardo/projeto/api-lumen/vendor/illuminate/support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->find()
+#11 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2132): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#12 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2144): Illuminate\\Database\\Eloquent\\Model->__call()
+#13 /home/leonardo/projeto/api-lumen/app/Http/Controllers/PostController.php(18): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#14 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(36): App\\Http\\Controllers\\PostController->searchPost()
+#15 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#17 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#18 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#19 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Illuminate\\Container\\Container->call()
+#20 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(332): Laravel\\Lumen\\Application->callControllerCallable()
+#21 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(282): Laravel\\Lumen\\Application->callControllerAction()
+#22 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(267): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute()
+#23 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(237): Laravel\\Lumen\\Application->handleFoundRoute()
+#24 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\\Lumen\\Application->handleDispatcherResponse()
+#25 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}()
+#26 /home/leonardo/projeto/api-lumen/app/Http/Middleware/CorsMiddleware.php(34): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#27 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(167): App\\Http\\Middleware\\CorsMiddleware->handle()
+#28 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#30 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(426): Illuminate\\Pipeline\\Pipeline->then()
+#31 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(175): Laravel\\Lumen\\Application->sendThroughPipeline()
+#32 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch()
+#33 /home/leonardo/projeto/api-lumen/public/index.php(28): Laravel\\Lumen\\Application->run()
+#34 {main}
+
+[previous exception] [object] (PDOException(code: 22P02): SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \"Amanda\" at /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php:373)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(373): PDOStatement->execute()
+#1 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Connection.php(376): Illuminate\\Database\\Connection->run()
+#4 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\\Database\\Connection->select()
+#5 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2402): Illuminate\\Database\\Query\\Builder->runSelect()
+#6 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2936): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#7 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Query/Builder.php(2403): Illuminate\\Database\\Query\\Builder->onceWithColumns()
+#8 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(625): Illuminate\\Database\\Query\\Builder->get()
+#9 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(609): Illuminate\\Database\\Eloquent\\Builder->getModels()
+#10 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Concerns/BuildsQueries.php(294): Illuminate\\Database\\Eloquent\\Builder->get()
+#11 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Builder.php(400): Illuminate\\Database\\Eloquent\\Builder->first()
+#12 /home/leonardo/projeto/api-lumen/vendor/illuminate/support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->find()
+#13 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2132): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#14 /home/leonardo/projeto/api-lumen/vendor/illuminate/database/Eloquent/Model.php(2144): Illuminate\\Database\\Eloquent\\Model->__call()
+#15 /home/leonardo/projeto/api-lumen/app/Http/Controllers/PostController.php(18): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#16 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(36): App\\Http\\Controllers\\PostController->searchPost()
+#17 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#19 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#20 /home/leonardo/projeto/api-lumen/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#21 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Illuminate\\Container\\Container->call()
+#22 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(332): Laravel\\Lumen\\Application->callControllerCallable()
+#23 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(282): Laravel\\Lumen\\Application->callControllerAction()
+#24 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(267): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute()
+#25 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(237): Laravel\\Lumen\\Application->handleFoundRoute()
+#26 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\\Lumen\\Application->handleDispatcherResponse()
+#27 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}()
+#28 /home/leonardo/projeto/api-lumen/app/Http/Middleware/CorsMiddleware.php(34): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#29 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(167): App\\Http\\Middleware\\CorsMiddleware->handle()
+#30 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Routing/Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/leonardo/projeto/api-lumen/vendor/illuminate/pipeline/Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}()
+#32 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(426): Illuminate\\Pipeline\\Pipeline->then()
+#33 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(175): Laravel\\Lumen\\Application->sendThroughPipeline()
+#34 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch()
+#35 /home/leonardo/projeto/api-lumen/public/index.php(28): Laravel\\Lumen\\Application->run()
+#36 {main}
+"} 
+[2023-09-15 17:43:37] local.ERROR: Command "migrate:make" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"migrate:make\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status at /home/leonardo/projeto/api-lumen/vendor/symfony/console/Application.php:720)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find()
+#1 /home/leonardo/projeto/api-lumen/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#2 /home/leonardo/projeto/api-lumen/vendor/illuminate/console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#3 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Console/Kernel.php(116): Illuminate\\Console\\Application->run()
+#4 /home/leonardo/projeto/api-lumen/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle()
+#5 {main}
+"} 
+[2023-09-15 17:43:52] local.ERROR: There are no commands defined in the "migration" namespace.
+
+Did you mean this?
+    migrate {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"migration\" namespace.
+
+Did you mean this?
+    migrate at /home/leonardo/projeto/api-lumen/vendor/symfony/console/Application.php:650)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/symfony/console/Application.php(701): Symfony\\Component\\Console\\Application->findNamespace()
+#1 /home/leonardo/projeto/api-lumen/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find()
+#2 /home/leonardo/projeto/api-lumen/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#3 /home/leonardo/projeto/api-lumen/vendor/illuminate/console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#4 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Console/Kernel.php(116): Illuminate\\Console\\Application->run()
+#5 /home/leonardo/projeto/api-lumen/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle()
+#6 {main}
+"} 
+[2023-09-15 17:43:59] local.ERROR: Command "migrate:make" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"migrate:make\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status at /home/leonardo/projeto/api-lumen/vendor/symfony/console/Application.php:720)
+[stacktrace]
+#0 /home/leonardo/projeto/api-lumen/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find()
+#1 /home/leonardo/projeto/api-lumen/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#2 /home/leonardo/projeto/api-lumen/vendor/illuminate/console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#3 /home/leonardo/projeto/api-lumen/vendor/laravel/lumen-framework/src/Console/Kernel.php(116): Illuminate\\Console\\Application->run()
+#4 /home/leonardo/projeto/api-lumen/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle()
+#5 {main}
+"} 
